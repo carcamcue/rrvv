@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Conecta | Redes Vivas</title>
+<meta charset="utf-8" />
+<meta name="description" content="Debe contener las palabras clave, tratar de atraer clicks y de longitud entre 150 y 160 caracteres">
+<link rel="shortcut icon" href="../../images/logo.png" />
+
+<!-- Librerías -->
+<link rel="stylesheet" href="../../css/flexboxgrid.min.css" type="text/css">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+ <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+
+<!-- Custom Style Sheet -->
+<link rel="stylesheet" href="../../css/styles.css" />
+</head>
+ 
+<body ondragstart="return false;">
+    
+    <header>
+      <div class="bg-white-overlay">
+        <a href="../../">
+          <img src="../../images/logo.png" alt=""/ class="logo">
+        </a>
+        <nav>
+          <a class="btn btn-lined-thin btn-primary active" href="/index.htm">Hogar</a>
+          <a class="btn btn-lined-thin btn-primary" href="/uno.htm">Miespacio</a>
+          <a class="btn btn-lined-thin btn-primary" href="/dos.htm">Aldeas</a>
+          <a class="btn btn-lined-thin btn-primary" href="/tres.htm">Conecta</a>
+        </nav>
+      </div>
+    </header>
+
+    <section>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3" style="position: relative;">
+          <div id="map"></div>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 rrvv-block mr-10">
+          
+
+          <div class="tabs">
+
+
+
+
+
+
+
+
+            <!-- ------------------- PERFILES -------------------- -->
+            <div id="perfiles" class="tab">
+              <ul class="nav nav-tabs">
+                <li><a href="#todo">Todo</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li class="active"><a href="#perfiles">Perfiles</a></li>
+                <li><a href="#conexiones">Conexiones</a></li>
+              </ul>
+
+              <div class="content">
+                  Perfiles
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+            <!-- ------------------- PROYECTOS -------------------- -->
+            <div id="proyectos" class="tab">
+              <ul class="nav nav-tabs">
+                <li><a href="#todo">Todo</a></li>
+                <li class="active"><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#perfiles">Perfiles</a></li>
+                <li><a href="#conexiones">Conexiones</a></li>
+              </ul>
+
+              <div class="content">
+                Proyectos
+              </div>
+            </div>
+
+
+
+
+
+
+
+            <!-- ------------------- TODO -------------------- -->
+            <div id="todo" class="tab">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#todo">Todo</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#perfiles">Perfiles</a></li>
+                <li><a href="#conexiones">Conexiones</a></li>
+              </ul>
+
+              
+                
+              <div class="row mt-60">
+                <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                  <div class="card rrvv-block">
+                    <div class="card-header">
+                      <img src="../../images/default-image.png" alt="Avatar">
+                      <img src="../../images/default-people.png" alt="Avatar" class="img-profile">
+                      <img src="../../images/circle-profile.png" alt="Avatar" class="img-circle-profile">
+                    </div>
+                    <div class="card-body">
+                      <h4><b>Recital de poemas</b></h4>
+                      <p>Miércoles 23.Sep.2020</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                  <div class="card rrvv-block">
+                    <div class="card-header-profile text-center">
+                      <img src="../../images/default-people.png" alt="Avatar" class="img-profile">
+                      <img src="../../images/circle-profile.png" alt="Avatar" class="img-circle-profile">
+                    </div>
+                    <div class="card-body">
+                      <h4><b>Patricia Girón</b></h4>
+                      <p>Pintor</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                  <div class="card rrvv-block">
+                    <div class="card-header">
+                      <img src="../../images/default-image.png" alt="Avatar">
+                      <img src="../../images/default-people.png" alt="Avatar" class="img-profile">
+                      <img src="../../images/circle-profile.png" alt="Avatar" class="img-circle-profile">
+                    </div>
+                    <div class="card-body">
+                      <h4><b>Pintura en vertical</b></h4>
+                      <p>Sábado 16.Feb.2020</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                  <div class="card rrvv-block">
+                    <div class="card-header">
+                      <img src="../../images/default-image.png" alt="Avatar">
+                      <img src="../../images/default-people.png" alt="Avatar" class="img-profile">
+                      <img src="../../images/circle-profile.png" alt="Avatar" class="img-circle-profile">
+                    </div>
+                    <div class="card-body">
+                      <h4><b>Obra de teatro</b></h4>
+                      <p>Domingo 02.Jun.2020</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                  <div class="card rrvv-block">
+                    <div class="card-header-profile text-center">
+                      <img src="../../images/default-people.png" alt="Avatar" class="img-profile">
+                      <img src="../../images/circle-profile.png" alt="Avatar" class="img-circle-profile">
+                    </div>
+                    <div class="card-body">
+                      <h4><b>Juan Valle</b></h4>
+                      <p>Pintor</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                  <div class="card rrvv-block">
+                    <div class="card-header-profile text-center">
+                      <img src="../../images/default-people.png" alt="Avatar" class="img-profile">
+                      <img src="../../images/circle-profile.png" alt="Avatar" class="img-circle-profile">
+                    </div>
+                    <div class="card-body">
+                      <h4><b>Patricia Girón</b></h4>
+                      <p>Pintor</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                  <div class="card rrvv-block">
+                    <div class="card-header">
+                      <img src="../../images/default-image.png" alt="Avatar">
+                      <img src="../../images/default-people.png" alt="Avatar" class="img-profile">
+                      <img src="../../images/circle-profile.png" alt="Avatar" class="img-circle-profile">
+                    </div>
+                    <div class="card-body">
+                      <h4><b>Pintura en vertical</b></h4>
+                      <p>Sábado 16.Feb.2020</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                  <div class="card rrvv-block">
+                    <div class="card-header">
+                      <img src="../../images/default-image.png" alt="Avatar">
+                      <img src="../../images/default-people.png" alt="Avatar" class="img-profile">
+                      <img src="../../images/circle-profile.png" alt="Avatar" class="img-circle-profile">
+                    </div>
+                    <div class="card-body">
+                      <h4><b>Obra de teatro</b></h4>
+                      <p>Domingo 02.Jun.2020</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                  <div class="card rrvv-block">
+                    <div class="card-header-profile text-center">
+                      <img src="../../images/default-people.png" alt="Avatar" class="img-profile">
+                      <img src="../../images/circle-profile.png" alt="Avatar" class="img-circle-profile">
+                    </div>
+                    <div class="card-body">
+                      <h4><b>Juan Valle</b></h4>
+                      <p>Pintor</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                  <div class="card rrvv-block">
+                    <div class="card-header">
+                      <img src="../../images/default-image.png" alt="Avatar">
+                      <img src="../../images/default-people.png" alt="Avatar" class="img-profile">
+                      <img src="../../images/circle-profile.png" alt="Avatar" class="img-circle-profile">
+                    </div>
+                    <div class="card-body">
+                      <h4><b>Pintura en vertical</b></h4>
+                      <p>Sábado 16.Feb.2020</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                  <div class="card rrvv-block">
+                    <div class="card-header">
+                      <img src="../../images/default-image.png" alt="Avatar">
+                      <img src="../../images/default-people.png" alt="Avatar" class="img-profile">
+                      <img src="../../images/circle-profile.png" alt="Avatar" class="img-circle-profile">
+                    </div>
+                    <div class="card-body">
+                      <h4><b>Obra de teatro</b></h4>
+                      <p>Domingo 02.Jun.2020</p>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+            <!--------------------- Conexiones ---------------------->
+            <div id="conexiones" class="tab">
+              <ul class="nav nav-tabs">
+                <li><a href="#todo">Todo</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#perfiles">Perfiles</a></li>
+                <li class="active"><a href="#conexiones">Conexiones</a></li>
+              </ul>
+
+              <div class="content">
+                Conexiones
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+       
+    </section>
+
+    <footer>
+        2019 &copy; Redes Vivas | Desarrollado por <a href="http://enreda.coop" target="_blank">ENREDA</a>
+
+        <nav>
+          <a class="active" href="/index.htm">Aviso legal</a>
+          <a class="" href="/uno.htm">Política de privacidad</a>
+          <a class="" href="/dos.htm">Política de cookies</a>
+        </nav>
+
+    </footer>
+</body>
+</html>
+<script>
+  var cities = L.layerGroup();
+
+  L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.').addTo(cities),
+  L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.').addTo(cities),
+  L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.').addTo(cities),
+  L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.').addTo(cities);
+
+  var map = L.map('map', {
+    center: [39.73, -104.99],
+    zoom: 10,
+    layers: [cities]
+  });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+</script>
