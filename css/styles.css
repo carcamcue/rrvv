@@ -201,6 +201,7 @@ a {
 }
 .navbar .logo {
 		height: 80px;
+		display: inline-block;
 	}
 	.navbar nav {
 		display: inline-block;
@@ -215,6 +216,10 @@ a {
 			.navbar nav .btn-navbar:hover {
 				color: var(--turquesa);
 			}
+		.navbar nav svg {
+			height: 75px;
+			vertical-align: middle;
+		}
 header {
 	background-image: url("../images/bg-sponge.jpg");
 }

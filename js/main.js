@@ -1,6 +1,27 @@
 
-/* Función efecto Parallax portada */
 $(function () {
+
+    $(".navbar nav a").on("mouseover", function(){
+        var id = this.id;
+        $('svg #' + id).css({ stroke: "#0E0F0F" });
+    });
+    $(".navbar nav a").on("mouseout", function(){
+        var id = this.id;
+        $('svg #' + id).css({ stroke: "#619996" });
+    });
+
+    $(".navbar svg a").on("mouseover", function(){
+        var id = $(this).attr("id_link");
+        $('svg #' + id).css({ stroke: "#0E0F0F" });
+    });
+    $(".navbar svg a").on("mouseout", function(){
+        var id = $(this).attr("id_link");
+        $('svg #' + id).css({ stroke: "#619996" });
+    });
+    
+    /************* 
+    * Función efecto Parallax portada 
+    *************/
     // Add event listener
     document.addEventListener("mousemove", parallax);
     const elem = document.querySelector("#parallax");
