@@ -9,7 +9,7 @@
  *
  * Table of content
  *
- * 00. Colors
+ * 00. Colors and Fonts
  * 01. Basics
  * 01.01. Texts
  * 01.02. Margins
@@ -28,26 +28,52 @@
  * 13. Map
  * 14. Tabs
  * 15. Cards
+ * 16. Parallax
+ * 17. Decorators
  * 
 ********************/
 
 /*******************
- * 00. Colors
+ * 00. Colors and Fonts
 *******************/
 :root {
-	--primary: 	#2392A8;
-	--light: 		#f1f1f1;
-	--default: 	#41403E;
-	--gray: 		#8c8c8c;
-	--green: 		#398f14;
-	--white: 		#FFFFFF;
+
+
+	--turquesa-claro: 	#88B2B0;
+	--turquesa: 				#619996;
+	--turquesa-oscuro: 	#497270;
+	--gris:							#F3F5F5;
+	--salmon-claro:			#E9C59D;
+	--salmon:						#E5AF72;
+	--huevo:						#F8F7E1;
+	--amarillon:				#D9CD12;
+	--coral-claro:			#F5AA96;
+	--coral:						#E9896F;
+	--granate:					#904646;
+	--crema:						#EDECD9;
+	--casi-negro:				#0E0F0F;
+	--blanco:						#FFFFFF;
+
 	
-	--primary-overlay: rgba(35, 146, 168, 0.66);
-	--white-overlay: 		rgba(255,255,255,0.66);
-	--default-trans: 	rgba(0,0,0,0.5);
+	--turquesa-overlay: rgba(54, 154, 151, 0.66);
+	--gris-overlay: 		rgba(238,237,216,0.66);
+	--casi-negro-trans: 	rgba(6,6,6,.5);
+
+	--font-1x: 19px;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
+@font-face {
+  font-family: 'Typewriter_Condensed';
+  src: url('Typewriter_Condensed/Typewriter_Condensed.eot');
+  src: local('Typewriter_Condensed/Typewriter_Condensed'),
+      url('Typewriter_Condensed/Typewriter_Condensed.eot?#iefix') format('embedded-opentype'),
+      url('Typewriter_Condensed/Typewriter_Condensed.woff2') format('woff2'),
+      url('Typewriter_Condensed/Typewriter_Condensed.woff') format('woff'),
+      url('Typewriter_Condensed/Typewriter_Condensed.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/*@import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');*/
 
 /*******************
  * 01. Basics
@@ -56,21 +82,33 @@ html, body {
 	height: 100%;
 }
 body {
-	background-color: var(--light);
+	background-color: var(--gris);
 	margin: 0px;
-	color: var(--default);
-	font-family: 'Inconsolata', monospace;
-	font-size: 15px;
+	color: var(--casi-negro);
+	font-family: 'Typewriter_Condensed', monospace;
+	font-size: var(--font-1x);
+	position: relative;
 }
 section {
-	margin: 0px 5px;
+	margin: 0px;
 }
 section > .row {
 	margin: 0px;
 }
 a {
-	color: var(--primary);
+	color: var(--turquesa);
 	text-decoration: none;
+}
+.container {
+	max-width: 1120px;
+	margin: 0 auto;
+}
+.relative {
+	position: relative;
+}
+.sticky {
+	position: sticky;
+	top: calc(90px + 15px);
 }
 
 /*******************
@@ -79,45 +117,122 @@ a {
 .text-center {
 	text-align: center;
 }
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-turquesa-claro { color: var(--turquesa-claro); }
+.text-turquesa { color: var(--turquesa); }
+.text-turquesa-oscuro { color: var(--turquesa-oscuro); }
+.text-gris { color: var(--gris); }
+.text-salmon-claro { color: var(--salmon-claro); }
+.text-salmon { color: var(--salmon); }
+.text-huevo { color: var(--huevo); }
+.text-amarillon { color: var(--amarillon); }
+.text-coral-claro { color: var(--coral-claro); }
+.text-coral { color: var(--coral); }
+.text-granate { color: var(--granate); }
+.text-crema { color: var(--crema); }
+.text-casi-negro { color: var(--casi-negro); }
 
 /*******************
  * 01.02. Margins
 *******************/
+.m-0 {
+	margin: 0px;
+}
 .mt-60 {
 	margin-top: 60px;
+}
+.mb-60 {
+	margin-bottom: 60px;
+}
+.ml-30 {
+	margin-left: 30px;
 }
 
 /*******************
  * 01.03. Paddings
 *******************/
+.p-0 {
+	padding: 0px;
+}
+.p-15 {
+	padding: 15px;
+}
+.p-30 {
+	padding: 30px;
+}
+.pb-60 {
+	padding-bottom: 60px;
+}
+.pt-30 {
+	padding-top: 30px;
+}
+.pt-60 {
+	padding-top: 60px;
+}
+.pt-120 {
+	padding-top: 120px;
+}
+.py-60 {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+.py-120 {
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
 
 /*******************
  * 02. Header
 *******************/
-header {
-	background-image: url("../images/bg-sponge.jpg");
-	border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-	border: solid 2px var(--default);
-	margin: 10px
+.navbar {
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	background-color: var(--gris);
+	z-index: 9999999999;
+	-moz-box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
+	-webkit-box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
+  box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
 }
-	header .logo {
-		height: 130px;
+.navbar .logo {
+		height: 80px;
 	}
-	header nav {
+	.navbar nav {
 		display: inline-block;
     float: right;
-    margin-top: 55px;
+    margin-top: 28px;
     margin-right: 120px;
 	}
+		.navbar nav .btn-navbar {
+			color: var(--casi-negro);
+			background: transparent;
+		}
+			.navbar nav .btn-navbar:hover {
+				color: var(--turquesa);
+			}
+header {
+	background-image: url("../images/bg-sponge.jpg");
+}
+	
 
 /*******************
  * 03. Footer
 *******************/
 footer {
-	font-size: 13px;
-	color: var(--gray);
-	margin: 30px;
+	font-size: 15px;
+	color: var(--turquesa-claro);
+	position: relative;
+	top: -90px;
 }
+	footer .container {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
 	footer nav {
 		display: inline-block;
     float: right;
@@ -129,70 +244,121 @@ footer {
 			border-left: none;
 		}
 		footer nav > a {
-			border-left: 1px solid var(--gray);
+			border-left: 1px solid var(--turquesa-claro);
 			padding-left: 10px;
 			margin-left: 5px;
 		}
 
 footer a {
-	color: var(--gray);
+	color: var(--turquesa-claro);
 }
 	footer a:hover {
-		color: var(--primary);
+		color: var(--turquesa-oscuro);
+	}
+
+footer .contact-link {
+	font-size: var(--font-1x);
+}
+footer .contact-link a {
+	color: var(--crema);
+}
+	footer .contact-link a:hover {
+		color: var(--salmon-claro);
 	}
 
 /*******************
  * 04. Images
 *******************/
+.img-page-profile {
+	border-radius: 100%;
+	width: 150px;
+	height: 150px;
+	margin: 0 auto;
+	object-fit: cover;
+}
 
 /*******************
  * 05. Backgrounds
 *******************/
-.bg-primary-overlay {
-	background-color: var(--primary-overlay);
+.bg-turquesa-overlay {
+	background-color: var(--turquesa-overlay);
 	height: inherit;
 	width: inherit;
-	border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
-.bg-white-overlay {
-	background-color: var(--white-overlay);
+.bg-gris-overlay {
+	background-color: var(--gris-overlay);
 	height: inherit;
 	width: inherit;
-	border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
+.bg-turquesa-claro { background-color: var(--turquesa-claro); }
+.bg-turquesa { background-color: var(--turquesa); }
+.bg-turquesa-oscuro { background-color: var(--turquesa-oscuro); }
+.bg-gris { background-color: var(--gris); }
+.bg-salmon-claro { background-color: var(--salmon-claro); }
+.bg-salmon { background-color: var(--salmon); }
+.bg-huevo { background-color: var(--huevo); }
+.bg-amarillon { background-color: var(--amarillon); }
+.bg-coral-claro { background-color: var(--coral-claro); }
+.bg-coral { background-color: var(--coral); }
+.bg-granate { background-color: var(--granate); }
+.bg-crema { background-color: var(--crema); }
+.bg-casi-negro { background-color: var(--casi-negro); }
+.bg-blanco { background-color: var(--blanco); }
+
 
 /*******************
  * 06. Buttons
 *******************/
 .btn {
 	align-self: center;
-  background-color: var(--light);
+  background-color: var(--huevo);
   padding: 5px 15px;
   margin: 0 5px;
   transition: all .5s ease;
-  color: var(--default);
+  color: var(--casi-negro);
   letter-spacing: 1px;
   outline: none;
-  box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
-  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
-	.btn:hover {
-		box-shadow: 2px 8px 4px -6px hsla(0,0%,0%,.3);
-	}
-
 	.btn-lined {
-		border: solid 5px var(--default);
+		border: solid 5px var(--casi-negro);
 	}
 	.btn-lined-thin {
-		border: solid 2px var(--default);
+		border: solid 2px var(--casi-negro);
 	}
 	.btn-dashed-thin {
-		border: dashed 2px var(--default);
+		border: dashed 2px var(--casi-negro);
 	}
 
-.btn-primary {
-	background-color: var(--primary);
-	color: var(--light);
+.btn-turquesa {
+	background-color: var(--turquesa);
+	color: var(--huevo);
+}
+
+.btn-turquesa.btn-default {
+	background: transparent;
+	color: var(--turquesa);
+}
+	.btn-turquesa:hover {
+		color: var(--turquesa-oscuro);
+	}
+.btn-gris.btn-default {
+	background: transparent;
+	color: var(--gris);
+}
+	.btn-gris:hover {
+		color: var(--huevo);
+	}
+
+.badge {
+	border-radius: 6px;
+	padding: 3px 5px;
+	margin: 3px;
+	display: inline-block;
+	cursor: default;
+}
+.badge-primary {
+	background: var(--crema);
+	color: var(--turquesa-claro);
 }
 
 /*******************
@@ -200,17 +366,13 @@ footer a {
 *******************/
 section.portada {
 	height: 100%;
-  max-height: calc(100% - 150px);
-  background: white;
-  margin: 30px;
   position: relative;
-  background-image: url("../images/bg-sponge.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  /*background-image: url("../images/bg-sponge.jpg");*/
+/*  background-repeat: no-repeat;
   background-position: center left;
 
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  border: solid 2px var(--default);
+  border: solid 2px var(--casi-negro);*/
 }
 	section.portada .logo {
 		top: calc(50% - 260px/2);
@@ -222,9 +384,12 @@ section.portada {
 	}
 
 .rrvv-block {
-	border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  border: solid 2px var(--default);
-  background-color: var(--white);
+  background-color: transparent;
+  margin-bottom: 15px;
+}
+.profile-info {
+  border-top: 2px solid var(--crema);
+  margin-top: 15px;
 }
 
 /*******************
@@ -263,9 +428,7 @@ section.portada {
 	margin: -15px 0 0 -15px;
 	position: absolute;
 	border-radius: 50%;
-	border: 2px solid var(--default);
-	background-color: var(--primary);
-	border-radius: 285px 122px 225px 108px/161px 257px 123px 280px;
+	background-color: var(--gris);
 	-webkit-animation: pulse 0.6s infinite alternate;
 	animation: pulse 0.6s infinite alternate;
 }
@@ -300,7 +463,8 @@ section.portada {
 
 .tooltip-content {
 	position: absolute;
-	background: var(--primary);
+	background: var(--gris);
+	color: var(--turquesa);
 	z-index: 9999;
 	width: 200px;
 	bottom: 50%;
@@ -309,9 +473,8 @@ section.portada {
 	border-radius: 20px;
 	font-size: 1.1em;
 	text-align: center;
-	color: #fff;
 	opacity: 0;
-	cursor: default;
+	cursor: pointer;
 	pointer-events: none;
 	-webkit-font-smoothing: antialiased;
 	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
@@ -382,12 +545,8 @@ section.portada {
  * 13. Map
 *******************/
 #map {
-	height: 350px;
+	height: 450px;
   width: 100%;
-  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  border: solid 2px var(--default);
-  position: sticky !important;
-  top: 15px;
 }
 
 /*******************
@@ -406,18 +565,28 @@ section.portada {
 }
 
 .tabs {
-  margin: 10px;
+  /*margin: 6px;*/
 }
 	.tabs .nav.nav-tabs li {
 		display: inline-block;
 	}
 		.tabs .nav.nav-tabs li > a {
-			padding: 5px 15px;
-			border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  		border: solid 2px var(--default);
-  		background-color: var(--primary);
-  		color: var(--light);
+			padding: 4px 10px;
+  		background-color: var(--crema);
+  		color: var(--turquesa);
   	}
+  .tabs .nav.nav-tabs li:hover > a {
+  	background-color: var(--huevo);
+  	color: var(--turquesa);
+  	border-bottom: 2px solid var(--turquesa);
+  }
+  .tabs .nav.nav-tabs li.active > a,
+  .tabs .nav.nav-tabs li.active:hover > a
+   {
+  	background-color: var(--turquesa-claro);
+  	color: var(--gris);
+  	border-bottom: 2px solid var(--turquesa);
+  }
 
 /*******************
  * 15. Cards
@@ -426,37 +595,47 @@ section.portada {
   /* Add shadows to create the "card" effect */
   /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);*/
   transition: 0.3s;
-  background-color: var(--light);
+  /*background-color: var(--huevo);*/
   margin-top: 15px;
 }
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);*/
 }
 
 /* Add some padding inside the card container */
 .card .card-body {
   padding: 15px;
+	color: var(--casi-negro);
 }
+	.card .card-body h4 {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+	.card .card-body p {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
 .card .card-header,
-.card .card-header-profile {
+.card.card-profile .card-header {
 	padding: 10px 15px;
 	position: relative;
+	height: 150px;
 }
 	.card .card-header > img {
 		width: 100%;
-		border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-	}
-	.card .card-header > img.img-profile {
-		position: absolute;
-    border-radius: 100%;
-    left: 12px;
-    bottom: -19px;
-    height: 65px;
-    width: 65px;
+		box-shadow: 0px 0px 0px 5px transparent;
+    background-color: transparent;
+    border: 5px solid transparent;
     object-fit: cover;
+    height: inherit;
 	}
+		.card:hover .card-header > img {
+			box-shadow: 0px 0px 0px 5px var(--huevo);
+    	background-color: var(--gris);
+    	border: 5px solid var(--crema);
+		}
 	.card .card-header > img.img-circle-profile {
 		left: 5px;
     bottom: -28px;
@@ -464,17 +643,112 @@ section.portada {
     width: 79px;
     position: absolute;
   }
-	.card .card-header-profile > img.img-profile {
+	.card.card-profile .card-header > img.img-profile {
 		margin: 0 auto;
 		border-radius: 100%;
 		width: 120px;
 		height: 120px;
 		object-fit: cover;
+		box-shadow: 0px 0px 0px 5px transparent;
+    background-color: transparent;
+    border: 5px solid transparent;
 	}
-	.card .card-header-profile > img.img-circle-profile {
+		.card.card-profile:hover .card-header > img.img-profile {
+			box-shadow: 0px 0px 0px 5px var(--huevo);
+    	background-color: var(--gris);
+    	border: 5px solid var(--crema);
+		}
+	.card.card-profile .card-header > img.img-circle-profile {
 		left: calc(50% - 71px);
     top: -5px;
     height: 150px;
     width: 142px;
     position: absolute;
   }
+
+/*******************
+ * 16. Parallax
+*******************/
+#parallax {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/bg-sponge-3.png"), url("../images/bg-sponge-2.png"), url("../images/bg-sea-overlay.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: 50% 50%;
+  background-size: auto, auto, cover;
+  
+  -moz-transition: all ease	0.5s;
+  -webkit-transition: all ease	0.5s;
+  transition: all ease	0.5s;
+}
+@media (min-width: 981px) {
+	#parallax {
+		-moz-transition: none;
+  	-webkit-transition: none;
+  	transition: none;
+  }
+}
+
+.bg-parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+}
+	.bg-parallax.height-1x {
+  	min-height: auto;
+	}
+.bg-img-1 {
+  background-image: url("../images/bg-parallax-overlay-1.jpg");
+  min-height: 50%;
+}
+.bg-img-2 {
+  background-image: url("../images/bg-parallax-overlay-2.jpg");
+  min-height: 50%;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+}
+.header-caption {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background: var(--turquesa-overlay);
+}
+
+/*******************
+ * 17. Decorators
+*******************/
+.diagonal-line {
+  position: relative;
+}
+	.diagonal-line svg {
+	  display: block;
+	  width: 100%;
+	  height: 90px;
+	  background: transparent;
+	  z-index: 999999;
+	  position: relative;
+	  top: -90px;
+	}
+	footer .diagonal-line svg {
+		top: initial;
+	}
+		.diagonal-line svg polygon {
+			fill: var(--gris);
+		}
+.diagonal-line.gris svg polygon { fill: var(--gris); }
+.diagonal-line.turquesa svg polygon {	fill: var(--turquesa); }
+.diagonal-line.turquesa-claro svg polygon {	fill: var(--turquesa-claro); }
+.diagonal-line.turquesa-oscuro svg polygon {	fill: var(--turquesa-oscuro); }

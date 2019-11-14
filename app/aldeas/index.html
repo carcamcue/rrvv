@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Aldeas | Redes Vivas</title>
+<meta charset="utf-8" />
+<meta name="description" content="Debe contener las palabras clave, tratar de atraer clicks y de longitud entre 150 y 160 caracteres">
+<link rel="shortcut icon" href="../../images/logo.png" />
+
+<!-- Librerías -->
+<link rel="stylesheet" href="../../css/flexboxgrid.min.css" type="text/css">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+ <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+
+<!-- Custom Style Sheet -->
+<link rel="stylesheet" href="../../css/styles.css" />
+</head>
+ 
+<body ondragstart="return false;">
+    
+    <div class="navbar">
+      <a href="../../">
+        <img src="../../images/logo.png" alt=""/ class="logo ml-30">
+      </a>
+      <nav>
+        <a class="btn btn-navbar btn-default active" href="../../">Hogar</a>
+        <a class="btn btn-navbar btn-default" href="../perfil/">Miespacio</a>
+        <a class="btn btn-navbar btn-default" href="../aldeas/">Aldeas</a>
+        <a class="btn btn-navbar btn-default" href="../conecta/">Conecta</a>
+      </nav>
+    </div>
+
+    <section>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-0">
+          <div id="map"></div>
+          <div class="diagonal-line">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
+              <polygon points="100 0 100 10 0 10" />
+            </svg>
+          </div>
+        </div>
+        
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+          <div class="container pb-60">
+            <h1 class="text-center">Aldeas</h1>
+
+            <div class="row mt-60">
+              <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                <div class="card rrvv-block">
+                  <div class="card-header">
+                    <img src="../../images/place-1.jpg" alt="Avatar">
+                  </div>
+                  <div class="card-body">
+                    <h4><b>Aldea Sevillarte</b></h4>
+                    <p>Pintura y Arte</p>
+                    <p>Alameda, 12A</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                <div class="card rrvv-block">
+                  <div class="card-header">
+                    <img src="../../images/place-2.jpg" alt="Avatar">
+                  </div>
+                  <div class="card-body">
+                    <h4><b>Aldea Madrid IV</b></h4>
+                    <p>Música</p>
+                    <p>Gran Vía, 13</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                <div class="card rrvv-block">
+                  <div class="card-header">
+                    <img src="../../images/place-3.jpg" alt="Avatar">
+                  </div>
+                  <div class="card-body">
+                    <h4><b>Aldea Vialecturapol</b></h4>
+                    <p>Escritura y Literatura</p>
+                    <p>Viapol, 3 - Sevilla</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                <div class="card rrvv-block">
+                  <div class="card-header">
+                    <img src="../../images/place-1.jpg" alt="Avatar">
+                  </div>
+                  <div class="card-body">
+                    <h4><b>Aldea Sevillarte</b></h4>
+                    <p>Pintura y Arte</p>
+                    <p>Alameda, 12A</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                <div class="card rrvv-block">
+                  <div class="card-header">
+                    <img src="../../images/place-2.jpg" alt="Avatar">
+                  </div>
+                  <div class="card-body">
+                    <h4><b>Aldea Madrid IV</b></h4>
+                    <p>Música</p>
+                    <p>Gran Vía, 13</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                <div class="card rrvv-block">
+                  <div class="card-header">
+                    <img src="../../images/place-4.jpg" alt="Avatar">
+                  </div>
+                  <div class="card-body">
+                    <h4><b>Aldea Vialecturapol</b></h4>
+                    <p>Escritura y Literatura</p>
+                    <p>Viapol, 3 - Sevilla</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                <div class="card rrvv-block">
+                  <div class="card-header">
+                    <img src="../../images/place-5.jpg" alt="Avatar">
+                  </div>
+                  <div class="card-body">
+                    <h4><b>Aldea Madrid IV</b></h4>
+                    <p>Música</p>
+                    <p>Gran Vía, 13</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                <div class="card rrvv-block">
+                  <div class="card-header">
+                    <img src="../../images/place-6.jpg" alt="Avatar">
+                  </div>
+                  <div class="card-body">
+                    <h4><b>Aldea Vialecturapol</b></h4>
+                    <p>Escritura y Literatura</p>
+                    <p>Viapol, 3 - Sevilla</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+        </div><!-- container -->
+
+        </div>
+      </div>
+       
+    </section>
+
+
+
+
+    <div class="bg-parallax bg-img-1"></div>
+    <footer>
+      <div class="diagonal-line turquesa-claro">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polygon points="0 0 100 100 0 100" />
+        </svg>
+      </div>
+      <div class="bg-turquesa-claro">
+        <div class="container">
+          <!-- CONTACT INFO -->
+          <div class="row contact-link text-center">
+            <div class="col-sm-4 col-xs-12">
+              <div class="icon-container">
+                <i class="fa fa-envelope colored-text"></i>
+              </div>
+              <a href="mailto:info@redesvivas.com" class="strong">
+                info@redesvivas.com
+              </a>
+            </div>
+            <div class="col-sm-4 box col-xs-12">
+              <div class="icon-container">
+                <i class="fa fa-map-marker colored-text"></i>
+              </div>
+              <a href="http://www.redesvivas.com" class="strong">
+                www.redesvivas.com                 
+              </a>
+            </div>
+            <div class="col-sm-4 box col-xs-12">
+              <div class="icon-container">
+                <i class="fa fa-tablet colored-text"></i>
+              </div>
+              <a href="http://0034%20658%2047%2085%20895" class="strong">
+                +34 696 214 586                 
+              </a>
+            </div>
+            </div><!-- .contact-links -->
+        </div>
+      </div>
+      <div class="container">
+        2019 &copy; Redes Vivas | Desarrollado por <a href="http://enreda.coop" target="_blank">ENREDA</a>
+
+        <nav>
+          <a class="active" href="/index.htm">Aviso legal</a>
+          <a class="" href="/uno.htm">Política de privacidad</a>
+          <a class="" href="/dos.htm">Política de cookies</a>
+        </nav>
+      </div>
+    </footer>
+</body>
+</html>
+<script>
+  var cities = L.layerGroup();
+
+  L.marker([40.415844, -3.702337]).bindPopup('This is Littleton, CO.').addTo(cities),
+  L.marker([40.418638, -3.735688]).bindPopup('This is Denver, CO.').addTo(cities),
+  L.marker([40.384843, -3.669544]).bindPopup('This is Aurora, CO.').addTo(cities),
+  L.marker([40.373161, -3.699604]).bindPopup('This is Golden, CO.').addTo(cities);
+
+  var map = L.map('map', {
+    center: [40.409987, -3.699732],
+    zoom: 10,
+    layers: [cities]
+  });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+</script>

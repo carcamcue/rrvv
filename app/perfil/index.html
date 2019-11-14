@@ -9,50 +9,218 @@
 <!-- Librerías -->
 <link rel="stylesheet" href="../../css/flexboxgrid.min.css" type="text/css">
 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+ <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+
 <!-- Custom Style Sheet -->
 <link rel="stylesheet" href="../../css/styles.css" />
 </head>
  
 <body ondragstart="return false;">
     
-    <header>
-      <div class="bg-white-overlay">
-        <a href="../../">
-          <img src="../../images/logo.png" alt=""/ class="logo">
-        </a>
-        <nav>
-          <a class="btn btn-lined-thin btn-primary active" href="/index.htm">Hogar</a>
-          <a class="btn btn-lined-thin btn-primary" href="/uno.htm">Miespacio</a>
-          <a class="btn btn-lined-thin btn-primary" href="/dos.htm">Aldeas</a>
-          <a class="btn btn-lined-thin btn-primary" href="/tres.htm">Conecta</a>
-        </nav>
-      </div>
-    </header>
+    <div class="navbar">
+      <a href="../../">
+        <img src="../../images/logo.png" alt=""/ class="logo ml-30">
+      </a>
+      <nav>
+        <a class="btn btn-navbar btn-default active" href="../../">Hogar</a>
+        <a class="btn btn-navbar btn-default" href="../perfil/">Miespacio</a>
+        <a class="btn btn-navbar btn-default" href="../aldeas/">Aldeas</a>
+        <a class="btn btn-navbar btn-default" href="../conecta/">Conecta</a>
+      </nav>
+    </div>
 
+    <div class="bg-parallax bg-img-2" style="background:  url('../../images/image-2.png'); background-size: cover; background-position: center;">
+      <div class="header-caption text-center text-casi-negro"></div>
+    </div>
     <section>
       <div class="row">
-        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
-          <article>
-             <h2>Titilo de contenido</h2>
-             <p> Contenido </p>
-         </article>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 p-0">
+          <div class="diagonal-line">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
+              <polygon points="100 0 100 10 0 10" />
+            </svg>
+          </div>
         </div>
-        <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
-          <article>
-             <h2>Titilo de contenido</h2>
-             <p> Contenido </p>
-         </article>
+        
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center">
+          <div class="sticky mb-60">
+            <img src="../../images/user-1.png" class="img-page-profile">
+            <div class="p-15">
+              <h2 class="text-turquesa">Patricia Girón</h2>
+              <h4 class="m-0">Artista</h4>
+            </div>
+            <div class="p-15 text-left profile-info">
+              <p><b>Localización:</b> Sevilla</p>
+              <p><b>Aldea:</b> Redes Vivas</p>
+              <p><b>Categorías:</b>
+                <span class="badge badge-primary">Artista</span>
+                <span class="badge badge-primary">Creaciones</span>
+                <span class="badge badge-primary">Pintura</span>
+                <span class="badge badge-primary">Vertical</span>
+                <span class="badge badge-primary">Exterior</span>
+                <span class="badge badge-primary">Hogar</span>
+              </p>
+            </div>
+          </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+          <div class="container pb-60">
+            <h3 class="text-turquesa">Biografía</h3>
+            <p>
+              Me dedico al arte y la cultura desde que me recuerdo. A los 10 años comencé mi formación en artes escénicas y a los 12 en artes plásticas.
+              <br>
+              He organizado mi curiosidad por las artes vivas bajo este paraguas llamado “Tanim”, que da forma a dos líneas de trabajo, una formativa y otra performativa. Entrelazando así la investigación en la que llevo inmersa más de 20 años.
+            </p>
+          </div>
+          <div class="container pb-60">
+            <h3 class="text-turquesa">Proyectos</h3>
+            <div class="row">
+                  <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                    <div class="card rrvv-block">
+                      <div class="card-header">
+                        <img src="../../images/image-3.png" alt="Avatar">
+                      </div>
+                      <div class="card-body">
+                        <h4><b>Pintura en vertical I</b></h4>
+                        <p>Sábado 16.Feb.2017</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                    <div class="card rrvv-block">
+                      <div class="card-header">
+                        <img src="../../images/image-1.png" alt="Avatar">
+                      </div>
+                      <div class="card-body">
+                        <h4><b>Pintura en vertical II</b></h4>
+                        <p>Sábado 13.Jun.2018</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                    <div class="card rrvv-block">
+                      <div class="card-header">
+                        <img src="../../images/image-2.png" alt="Avatar">
+                      </div>
+                      <div class="card-body">
+                        <h4><b>Pintura en vertical III</b></h4>
+                        <p>Sábado 07.Ago.2019</p>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+
+          <div class="container pb-60">
+            <h3 class="text-turquesa">Conexiones</h3>
+            <div class="row">
+                  <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                    <a href="../perfil/">
+                      <div class="card card-profile rrvv-block">
+                        <div class="card-header text-center">
+                          <img src="../../images/user-2.png" alt="Avatar" class="img-profile">
+                        </div>
+                        <div class="card-body text-center">
+                          <h4><b>Juan Valle</b></h4>
+                          <p>Músico</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                    <a href="../perfil/">
+                      <div class="card card-profile rrvv-block">
+                        <div class="card-header text-center">
+                          <img src="../../images/user-1.png" alt="Avatar" class="img-profile">
+                        </div>
+                        <div class="card-body text-center">
+                          <h4><b>Patricia Girón</b></h4>
+                          <p>Pintor</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xs-12 col-sm-8 col-md-4 col-lg-3">
+                    <a href="../perfil/">
+                      <div class="card card-profile rrvv-block">
+                        <div class="card-header text-center">
+                          <img src="../../images/user-3.png" alt="Avatar" class="img-profile">
+                        </div>
+                        <div class="card-body text-center">
+                          <h4><b>Iván Gallardo</b></h4>
+                          <p>Escritor</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+            </div>
+          </div>
+
+        </div>
+
+
       </div>
        
     </section>
 
-    <aside>
-       <h3>Titulo de contenido</h3>
-           <p>contenido</p>
-    </aside>
+
+
+
+    <div class="bg-parallax bg-img-1"></div>
     <footer>
+      <div class="diagonal-line turquesa-claro">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polygon points="0 0 100 100 0 100" />
+        </svg>
+      </div>
+      <div class="bg-turquesa-claro">
+        <div class="container">
+          <!-- CONTACT INFO -->
+          <div class="row contact-link text-center">
+            <div class="col-sm-4 col-xs-12">
+              <div class="icon-container">
+                <i class="fa fa-envelope colored-text"></i>
+              </div>
+              <a href="mailto:info@redesvivas.com" class="strong">
+                info@redesvivas.com
+              </a>
+            </div>
+            <div class="col-sm-4 box col-xs-12">
+              <div class="icon-container">
+                <i class="fa fa-map-marker colored-text"></i>
+              </div>
+              <a href="http://www.redesvivas.com" class="strong">
+                www.redesvivas.com                 
+              </a>
+            </div>
+            <div class="col-sm-4 box col-xs-12">
+              <div class="icon-container">
+                <i class="fa fa-tablet colored-text"></i>
+              </div>
+              <a href="http://0034%20658%2047%2085%20895" class="strong">
+                +34 696 214 586                 
+              </a>
+            </div>
+            </div><!-- .contact-links -->
+        </div>
+      </div>
+      <div class="container">
         2019 &copy; Redes Vivas | Desarrollado por <a href="http://enreda.coop" target="_blank">ENREDA</a>
+
+        <nav>
+          <a class="active" href="/index.htm">Aviso legal</a>
+          <a class="" href="/uno.htm">Política de privacidad</a>
+          <a class="" href="/dos.htm">Política de cookies</a>
+        </nav>
+      </div>
     </footer>
 </body>
 </html>
+<script>
+
+</script>

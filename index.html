@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Página Inicial | Redes Vivas</title>
-<meta charset="utf-8" />
-<meta name="description" content="Debe contener las palabras clave, tratar de atraer clicks y de longitud entre 150 y 160 caracteres">
-<link rel="shortcut icon" href="images/logo.png" />
+  <title>Página Inicial | Redes Vivas</title>
+  <meta charset="utf-8" />
+  <meta name="description" content="Debe contener las palabras clave, tratar de atraer clicks y de longitud entre 150 y 160 caracteres">
+  <link rel="shortcut icon" href="images/logo.png" />
 
-<!-- Librerías -->
-<link rel="stylesheet" href="css/flexboxgrid.min.css" type="text/css">
+  <!-- Librerías -->
+  <link rel="stylesheet" href="css/flexboxgrid.min.css" type="text/css">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
-<!-- Custom Style Sheet -->
-<link rel="stylesheet" href="css/styles.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Custom JavaScript -->
+  <script type="text/javascript" src="js/main.js"></script>
 </head>
  
 <body ondragstart="return false;">
 
-    <section class="portada text-center">
-      <div class="bg-white-overlay">
-        <img src="images/logo.png" alt=""/ class="logo">
+  <div class="navbar">
+    <a href="/">
+      <img src="images/logo.png" alt=""/ class="logo ml-30">
+    </a>
+    <nav>
+      <a class="btn btn-navbar btn-default active" href="/">Hogar</a>
+      <a class="btn btn-navbar btn-default" href="app/perfil/">Miespacio</a>
+      <a class="btn btn-navbar btn-default" href="app/aldeas/">Aldeas</a>
+      <a class="btn btn-navbar btn-default" href="app/conecta/">Conecta</a>
+    </nav>
+  </div>
+  <header id="parallax">
+      <section class="portada text-center">
+      
+        <img src="images/logo-white.png" alt=""/ class="logo">
 
         <div class="tooltips">
           <div class="tooltip tooltip-east">
@@ -46,10 +62,94 @@
           </div>
         </div>
 
-       </div>
-    </section>
+      </section>
+      <div class="diagonal-line">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
+          <polygon points="100 0 100 10 0 10" />
+        </svg>
+      </div>
+    </header>
 
+
+      <section class="bg-parallax bg-gris">
+        <div class="caption text-center text-casi-negro">
+          <div class="container p-15 bg-gris ">
+            <h2 class="text-turquesa">¿Qué es Redes Vivas?</h2>
+            <p>
+              Redes Vivas es un proyecto que favorece el encuentro y la facilitación del arte desde los cuidados de la vida.
+            </p>
+            <p>
+              Dirigido a todas aquellas personas que se dedican al arte y la cultura y que tienen el deseo de poner la atención en los cuidados de la vida, la propia y la de todas.
+            </p>
+            <p>
+              Redes vivas se plantea desde una plataforma virtual, como un espacio mixto, en el que poder visibilizarnos, encontrar a compañeras y generar con ellas vías de colaboración. Un lugar en el que plantear otras formas de creación y producción, libres y responsables, que nos permitan emanciparnos y crecer en nuestro trabajo; una red que facilite el cambio a través de la guía y el acompañamiento en la reflexión y la acción, para construir juntas el mundo en cultura que deseamos.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="bg-parallax bg-img-2"></div>
+
+      <section class="bg-parallax height-1x bg-gris py-120">
+        <div class="text-center text-casi-negro">
+          <div class="container p-15">
+            <h2 class="text-granate">Preguntas para la reflexión</h2>
+            <p>
+              Aquí puedes encontrar las preguntas que planteamos para colaborar con la reflexión.
+            </p>
+            <p>
+              No es necesario contestarlas ni tener clara las respuestas, entendemos que no hay respuestas únicas y que elaborarlas quizás no sea sencillo.
+            </p>
+            <p>
+              Os invitamos a formar parte de esta red y a comprometeros con ella reflexionando día a día aquellas cuestiones que tienen que ver con los cuidados de la vida, la propia y la de todas y cómo estos pueden moldear nuestra dedicación.
+            </p>
+            <p>
+              Por organizar un contexto en cultura deseable, comenzando por nosotras mismas, haciendo un ejercicio de revisión amoroso y constante.
+            </p>
+          </div>
+        </div>
+      </section>
+    
+
+    <div class="bg-parallax bg-img-1"></div>
     <footer>
+      <div class="diagonal-line turquesa-claro">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <polygon points="0 0 100 100 0 100" />
+        </svg>
+      </div>
+      <div class="bg-turquesa-claro">
+        <div class="container">
+          <!-- CONTACT INFO -->
+          <div class="row contact-link text-center">
+            <div class="col-sm-4 col-xs-12">
+              <div class="icon-container">
+                <i class="fa fa-envelope colored-text"></i>
+              </div>
+              <a href="mailto:info@redesvivas.com" class="strong">
+                info@redesvivas.com
+              </a>
+            </div>
+            <div class="col-sm-4 box col-xs-12">
+              <div class="icon-container">
+                <i class="fa fa-map-marker colored-text"></i>
+              </div>
+              <a href="http://www.redesvivas.com" class="strong">
+                www.redesvivas.com                 
+              </a>
+            </div>
+            <div class="col-sm-4 box col-xs-12">
+              <div class="icon-container">
+                <i class="fa fa-tablet colored-text"></i>
+              </div>
+              <a href="http://0034%20658%2047%2085%20895" class="strong">
+                +34 696 214 586                 
+              </a>
+            </div>
+            </div><!-- .contact-links -->
+        </div>
+      </div>
+      <div class="container">
         2019 &copy; Redes Vivas | Desarrollado por <a href="http://enreda.coop" target="_blank">ENREDA</a>
 
         <nav>
@@ -57,7 +157,7 @@
           <a class="" href="/uno.htm">Política de privacidad</a>
           <a class="" href="/dos.htm">Política de cookies</a>
         </nav>
-
+      </div>
     </footer>
 </body>
 </html>
